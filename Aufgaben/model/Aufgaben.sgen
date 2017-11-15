@@ -7,7 +7,7 @@ GeneratorModel for yakindu::arduino_cpp {
 		}
 
 		feature Outlet {
-			targetProject = "model"
+			targetProject = "Aufgaben"
 			targetFolder = "src-gen"
 		}
 
