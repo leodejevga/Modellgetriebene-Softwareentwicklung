@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:sgraph="http://www.yakindu.org/sct/sgraph/2.0.0">
-  <sgraph:Statechart xmi:id="_hmRAwMVCEeen6NTzg7i8xQ" specification="@CycleBased(100)&#xA;interface:&#xA;var Hr:boolean&#xA;var Hy:boolean&#xA;var Hg:boolean&#xA;&#xA;var Nr:boolean&#xA;var Ny:boolean&#xA;var Ng:boolean&#xA;&#xA;var Pr:boolean&#xA;var Py:boolean&#xA;var Pg:boolean&#xA;&#xA;var h:boolean&#xA;&#xA;internal:&#xA;event n&#xA;event pressMe&#xA;event hG" name="Aufgaben">
+  <sgraph:Statechart xmi:id="_hmRAwMVCEeen6NTzg7i8xQ" specification="@CycleBased(100)&#xA;interface:&#xA;var Hr:boolean&#xA;var Hy:boolean&#xA;var Hg:boolean&#xA;&#xA;var Nr:boolean&#xA;var Ny:boolean&#xA;var Ng:boolean&#xA;&#xA;var Pr:boolean&#xA;var Py:boolean&#xA;var Pg:boolean&#xA;&#xA;var h:boolean&#xA;&#xA;//internal:&#xA;in event n&#xA;in event pressMe&#xA;in event hG" name="Aufgaben">
     <regions xmi:id="_hmSO5MVCEeen6NTzg7i8xQ" name="H">
       <vertices xsi:type="sgraph:Entry" xmi:id="_hmUEEMVCEeen6NTzg7i8xQ">
         <outgoingTransitions xmi:id="_hmXucMVCEeen6NTzg7i8xQ" target="_hmUrJMVCEeen6NTzg7i8xQ"/>
