@@ -3,13 +3,11 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="petrinetz" nsURI="http://www.example.org/petrinetz" nsPrefix="petrinetz">
   <eClassifiers xsi:type="ecore:EClass" name="Stelle">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Mark" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Übergang" upperBound="-1"
-        eType="#//Transition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="A" upperBound="-1" eType="#//Transition"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Transition">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Übergang" lowerBound="1"
-        eType="#//Stelle"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="B" lowerBound="1" eType="#//Stelle"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Gewicht" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

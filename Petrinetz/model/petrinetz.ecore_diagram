@@ -32,7 +32,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_kno8Gc0OEeePC80W8tAvJw"/>
     </children>
     <element xmi:type="ecore:EClass" href="petrinetz.ecore#//Transition"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_knoVCs0OEeePC80W8tAvJw" x="335" y="110"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_knoVCs0OEeePC80W8tAvJw" x="350" y="115"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_kjYuMc0OEeePC80W8tAvJw"/>
   <element xmi:type="ecore:EPackage" href="petrinetz.ecore#/"/>
@@ -44,7 +44,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_krJjEc0OEeePC80W8tAvJw" x="-20" y="-31"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_krI8Ac0OEeePC80W8tAvJw" fontName="Segoe UI"/>
-    <element xmi:type="ecore:EReference" href="petrinetz.ecore#//Stelle/Übergang"/>
+    <element xmi:type="ecore:EReference" href="petrinetz.ecore#//Stelle/A"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_krI8As0OEeePC80W8tAvJw" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ksTZoc0OEeePC80W8tAvJw" id="(0.5,0.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ksTZos0OEeePC80W8tAvJw" id="(0.5,1.0)"/>
@@ -57,7 +57,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_krux5s0OEeePC80W8tAvJw" x="-63" y="-29"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_krux4c0OEeePC80W8tAvJw" fontName="Segoe UI"/>
-    <element xmi:type="ecore:EReference" href="petrinetz.ecore#//Transition/Übergang"/>
+    <element xmi:type="ecore:EReference" href="petrinetz.ecore#//Transition/B"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_krux4s0OEeePC80W8tAvJw" points="[0, 0, 12, -140]$[61, 85, 73, -55]$[-12, 140, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ksSykM0OEeePC80W8tAvJw" id="(0.5,1.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ksTZoM0OEeePC80W8tAvJw" id="(0.5,0.0)"/>
