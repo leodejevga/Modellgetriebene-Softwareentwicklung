@@ -15,9 +15,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link petrinetz.Stelle#isMark <em>Mark</em>}</li>
- *   <li>{@link petrinetz.Stelle#getA <em>A</em>}</li>
  *   <li>{@link petrinetz.Stelle#getName <em>Name</em>}</li>
+ *   <li>{@link petrinetz.Stelle#isToken <em>Token</em>}</li>
+ *   <li>{@link petrinetz.Stelle#getZu <em>Zu</em>}</li>
  * </ul>
  *
  * @see petrinetz.PetrinetzPackage#getStelle()
@@ -26,49 +26,8 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Stelle extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Mark</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Mark</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Mark</em>' attribute.
-	 * @see #setMark(boolean)
-	 * @see petrinetz.PetrinetzPackage#getStelle_Mark()
-	 * @model
-	 * @generated
-	 */
-	boolean isMark();
-
-	/**
-	 * Sets the value of the '{@link petrinetz.Stelle#isMark <em>Mark</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Mark</em>' attribute.
-	 * @see #isMark()
-	 * @generated
-	 */
-	void setMark(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>A</b></em>' reference list.
-	 * The list contents are of type {@link petrinetz.Transition}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>A</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>A</em>' reference list.
-	 * @see petrinetz.PetrinetzPackage#getStelle_A()
-	 * @model
-	 * @generated
-	 */
-	EList<Transition> getA();
-
-	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * The default value is <code>"Eine Stelle"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
@@ -78,7 +37,7 @@ public interface Stelle extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see petrinetz.PetrinetzPackage#getStelle_Name()
-	 * @model required="true"
+	 * @model default="Eine Stelle"
 	 * @generated
 	 */
 	String getName();
@@ -92,5 +51,47 @@ public interface Stelle extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Token</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Token</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Token</em>' attribute.
+	 * @see #setToken(boolean)
+	 * @see petrinetz.PetrinetzPackage#getStelle_Token()
+	 * @model
+	 * @generated
+	 */
+	boolean isToken();
+
+	/**
+	 * Sets the value of the '{@link petrinetz.Stelle#isToken <em>Token</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Token</em>' attribute.
+	 * @see #isToken()
+	 * @generated
+	 */
+	void setToken(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Zu</b></em>' reference list.
+	 * The list contents are of type {@link petrinetz.Transition}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Zu</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Zu</em>' reference list.
+	 * @see petrinetz.PetrinetzPackage#getStelle_Zu()
+	 * @model
+	 * @generated
+	 */
+	EList<Transition> getZu();
 
 } // Stelle

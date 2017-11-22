@@ -5,46 +5,40 @@ package petrinetz.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
+import petrinetz.Petrinetz;
 import petrinetz.PetrinetzPackage;
 import petrinetz.Stelle;
 import petrinetz.Transition;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Transition</b></em>'.
+ * An implementation of the model object '<em><b>Petrinetz</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link petrinetz.impl.TransitionImpl#getZu <em>Zu</em>}</li>
- *   <li>{@link petrinetz.impl.TransitionImpl#getName <em>Name</em>}</li>
- *   <li>{@link petrinetz.impl.TransitionImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link petrinetz.impl.PetrinetzImpl#getName <em>Name</em>}</li>
+ *   <li>{@link petrinetz.impl.PetrinetzImpl#getS <em>S</em>}</li>
+ *   <li>{@link petrinetz.impl.PetrinetzImpl#getT <em>T</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class TransitionImpl extends MinimalEObjectImpl.Container implements Transition {
-	/**
-	 * The cached value of the '{@link #getZu() <em>Zu</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getZu()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Stelle> zu;
-
+public class PetrinetzImpl extends MinimalEObjectImpl.Container implements Petrinetz {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -53,7 +47,7 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = "Eine Transition";
+	protected static final String NAME_EDEFAULT = "Mein Petrinetz";
 
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -66,31 +60,31 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * The cached value of the '{@link #getS() <em>S</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getValue()
+	 * @see #getS()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int VALUE_EDEFAULT = 0;
+	protected EList<Stelle> s;
 
 	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * The cached value of the '{@link #getT() <em>T</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getValue()
+	 * @see #getT()
 	 * @generated
 	 * @ordered
 	 */
-	protected int value = VALUE_EDEFAULT;
+	protected EList<Transition> t;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TransitionImpl() {
+	protected PetrinetzImpl() {
 		super();
 	}
 
@@ -101,19 +95,7 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PetrinetzPackage.Literals.TRANSITION;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Stelle> getZu() {
-		if (zu == null) {
-			zu = new EObjectResolvingEList<Stelle>(Stelle.class, this, PetrinetzPackage.TRANSITION__ZU);
-		}
-		return zu;
+		return PetrinetzPackage.Literals.PETRINETZ;
 	}
 
 	/**
@@ -134,7 +116,7 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PetrinetzPackage.TRANSITION__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, PetrinetzPackage.PETRINETZ__NAME, oldName, name));
 	}
 
 	/**
@@ -142,8 +124,11 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getValue() {
-		return value;
+	public EList<Stelle> getS() {
+		if (s == null) {
+			s = new EObjectContainmentEList<Stelle>(Stelle.class, this, PetrinetzPackage.PETRINETZ__S);
+		}
+		return s;
 	}
 
 	/**
@@ -151,11 +136,27 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setValue(int newValue) {
-		int oldValue = value;
-		value = newValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PetrinetzPackage.TRANSITION__VALUE, oldValue, value));
+	public EList<Transition> getT() {
+		if (t == null) {
+			t = new EObjectContainmentEList<Transition>(Transition.class, this, PetrinetzPackage.PETRINETZ__T);
+		}
+		return t;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case PetrinetzPackage.PETRINETZ__S:
+			return ((InternalEList<?>) getS()).basicRemove(otherEnd, msgs);
+		case PetrinetzPackage.PETRINETZ__T:
+			return ((InternalEList<?>) getT()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -166,12 +167,12 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PetrinetzPackage.TRANSITION__ZU:
-			return getZu();
-		case PetrinetzPackage.TRANSITION__NAME:
+		case PetrinetzPackage.PETRINETZ__NAME:
 			return getName();
-		case PetrinetzPackage.TRANSITION__VALUE:
-			return getValue();
+		case PetrinetzPackage.PETRINETZ__S:
+			return getS();
+		case PetrinetzPackage.PETRINETZ__T:
+			return getT();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -185,15 +186,16 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PetrinetzPackage.TRANSITION__ZU:
-			getZu().clear();
-			getZu().addAll((Collection<? extends Stelle>) newValue);
-			return;
-		case PetrinetzPackage.TRANSITION__NAME:
+		case PetrinetzPackage.PETRINETZ__NAME:
 			setName((String) newValue);
 			return;
-		case PetrinetzPackage.TRANSITION__VALUE:
-			setValue((Integer) newValue);
+		case PetrinetzPackage.PETRINETZ__S:
+			getS().clear();
+			getS().addAll((Collection<? extends Stelle>) newValue);
+			return;
+		case PetrinetzPackage.PETRINETZ__T:
+			getT().clear();
+			getT().addAll((Collection<? extends Transition>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -207,14 +209,14 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PetrinetzPackage.TRANSITION__ZU:
-			getZu().clear();
-			return;
-		case PetrinetzPackage.TRANSITION__NAME:
+		case PetrinetzPackage.PETRINETZ__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case PetrinetzPackage.TRANSITION__VALUE:
-			setValue(VALUE_EDEFAULT);
+		case PetrinetzPackage.PETRINETZ__S:
+			getS().clear();
+			return;
+		case PetrinetzPackage.PETRINETZ__T:
+			getT().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -228,12 +230,12 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PetrinetzPackage.TRANSITION__ZU:
-			return zu != null && !zu.isEmpty();
-		case PetrinetzPackage.TRANSITION__NAME:
+		case PetrinetzPackage.PETRINETZ__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case PetrinetzPackage.TRANSITION__VALUE:
-			return value != VALUE_EDEFAULT;
+		case PetrinetzPackage.PETRINETZ__S:
+			return s != null && !s.isEmpty();
+		case PetrinetzPackage.PETRINETZ__T:
+			return t != null && !t.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -251,10 +253,8 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", value: ");
-		result.append(value);
 		result.append(')');
 		return result.toString();
 	}
 
-} //TransitionImpl
+} //PetrinetzImpl

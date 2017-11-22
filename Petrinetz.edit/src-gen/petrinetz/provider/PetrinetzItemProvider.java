@@ -10,6 +10,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -21,16 +23,17 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import petrinetz.Petrinetz;
+import petrinetz.PetrinetzFactory;
 import petrinetz.PetrinetzPackage;
-import petrinetz.Transition;
 
 /**
- * This is the item provider adapter for a {@link petrinetz.Transition} object.
+ * This is the item provider adapter for a {@link petrinetz.Petrinetz} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class TransitionItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class PetrinetzItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -38,7 +41,7 @@ public class TransitionItemProvider extends ItemProviderAdapter implements IEdit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TransitionItemProvider(AdapterFactory adapterFactory) {
+	public PetrinetzItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -53,26 +56,10 @@ public class TransitionItemProvider extends ItemProviderAdapter implements IEdit
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addZuPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
-			addValuePropertyDescriptor(object);
+			addTPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Zu feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addZuPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Transition_zu_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Transition_zu_feature",
-								"_UI_Transition_type"),
-						PetrinetzPackage.Literals.TRANSITION__ZU, true, false, true, null, null, null));
 	}
 
 	/**
@@ -84,38 +71,68 @@ public class TransitionItemProvider extends ItemProviderAdapter implements IEdit
 	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Transition_name_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Transition_name_feature",
-								"_UI_Transition_type"),
-						PetrinetzPackage.Literals.TRANSITION__NAME, true, false, false,
+						getResourceLocator(), getString("_UI_Petrinetz_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Petrinetz_name_feature",
+								"_UI_Petrinetz_type"),
+						PetrinetzPackage.Literals.PETRINETZ__NAME, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Value feature.
+	 * This adds a property descriptor for the T feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addValuePropertyDescriptor(Object object) {
+	protected void addTPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Transition_value_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Transition_value_feature",
-								"_UI_Transition_type"),
-						PetrinetzPackage.Literals.TRANSITION__VALUE, true, false, false,
-						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+						getResourceLocator(), getString("_UI_Petrinetz_t_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Petrinetz_t_feature",
+								"_UI_Petrinetz_type"),
+						PetrinetzPackage.Literals.PETRINETZ__T, true, false, true, null, null, null));
 	}
 
 	/**
-	 * This returns Transition.gif.
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(PetrinetzPackage.Literals.PETRINETZ__S);
+			childrenFeatures.add(PetrinetzPackage.Literals.PETRINETZ__T);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
+	}
+
+	/**
+	 * This returns Petrinetz.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Transition"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Petrinetz"));
 	}
 
 	/**
@@ -136,9 +153,9 @@ public class TransitionItemProvider extends ItemProviderAdapter implements IEdit
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Transition) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Transition_type")
-				: getString("_UI_Transition_type") + " " + label;
+		String label = ((Petrinetz) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_Petrinetz_type")
+				: getString("_UI_Petrinetz_type") + " " + label;
 	}
 
 	/**
@@ -152,10 +169,13 @@ public class TransitionItemProvider extends ItemProviderAdapter implements IEdit
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Transition.class)) {
-		case PetrinetzPackage.TRANSITION__NAME:
-		case PetrinetzPackage.TRANSITION__VALUE:
+		switch (notification.getFeatureID(Petrinetz.class)) {
+		case PetrinetzPackage.PETRINETZ__NAME:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case PetrinetzPackage.PETRINETZ__S:
+		case PetrinetzPackage.PETRINETZ__T:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -171,6 +191,12 @@ public class TransitionItemProvider extends ItemProviderAdapter implements IEdit
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add(createChildParameter(PetrinetzPackage.Literals.PETRINETZ__S,
+				PetrinetzFactory.eINSTANCE.createStelle()));
+
+		newChildDescriptors.add(createChildParameter(PetrinetzPackage.Literals.PETRINETZ__T,
+				PetrinetzFactory.eINSTANCE.createTransition()));
 	}
 
 	/**

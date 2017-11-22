@@ -56,6 +56,8 @@ public class PetrinetzFactoryImpl extends EFactoryImpl implements PetrinetzFacto
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+		case PetrinetzPackage.PETRINETZ:
+			return createPetrinetz();
 		case PetrinetzPackage.STELLE:
 			return createStelle();
 		case PetrinetzPackage.TRANSITION:
@@ -63,6 +65,16 @@ public class PetrinetzFactoryImpl extends EFactoryImpl implements PetrinetzFacto
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Petrinetz createPetrinetz() {
+		PetrinetzImpl petrinetz = new PetrinetzImpl();
+		return petrinetz;
 	}
 
 	/**

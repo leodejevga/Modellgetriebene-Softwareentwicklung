@@ -73,6 +73,29 @@ public class PetrinetzItemProviderAdapterFactory extends PetrinetzAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link petrinetz.Petrinetz} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PetrinetzItemProvider petrinetzItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link petrinetz.Petrinetz}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPetrinetzAdapter() {
+		if (petrinetzItemProvider == null) {
+			petrinetzItemProvider = new PetrinetzItemProvider(this);
+		}
+
+		return petrinetzItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link petrinetz.Stelle} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -217,6 +240,8 @@ public class PetrinetzItemProviderAdapterFactory extends PetrinetzAdapterFactory
 	 * @generated
 	 */
 	public void dispose() {
+		if (petrinetzItemProvider != null)
+			petrinetzItemProvider.dispose();
 		if (stelleItemProvider != null)
 			stelleItemProvider.dispose();
 		if (transitionItemProvider != null)

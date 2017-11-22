@@ -22,6 +22,15 @@ public interface PetrinetzFactory extends EFactory {
 	PetrinetzFactory eINSTANCE = petrinetz.impl.PetrinetzFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Petrinetz</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Petrinetz</em>'.
+	 * @generated
+	 */
+	Petrinetz createPetrinetz();
+
+	/**
 	 * Returns a new object of class '<em>Stelle</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

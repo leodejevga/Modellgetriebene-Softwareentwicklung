@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import petrinetz.Petrinetz;
 import petrinetz.PetrinetzFactory;
 import petrinetz.PetrinetzPackage;
 import petrinetz.Stelle;
@@ -21,6 +22,13 @@ import petrinetz.Transition;
  * @generated
  */
 public class PetrinetzPackageImpl extends EPackageImpl implements PetrinetzPackage {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass petrinetzEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -103,6 +111,42 @@ public class PetrinetzPackageImpl extends EPackageImpl implements PetrinetzPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getPetrinetz() {
+		return petrinetzEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPetrinetz_Name() {
+		return (EAttribute) petrinetzEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPetrinetz_S() {
+		return (EReference) petrinetzEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPetrinetz_T() {
+		return (EReference) petrinetzEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getStelle() {
 		return stelleEClass;
 	}
@@ -112,7 +156,7 @@ public class PetrinetzPackageImpl extends EPackageImpl implements PetrinetzPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getStelle_Mark() {
+	public EAttribute getStelle_Name() {
 		return (EAttribute) stelleEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -121,8 +165,8 @@ public class PetrinetzPackageImpl extends EPackageImpl implements PetrinetzPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStelle_A() {
-		return (EReference) stelleEClass.getEStructuralFeatures().get(1);
+	public EAttribute getStelle_Token() {
+		return (EAttribute) stelleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -130,8 +174,8 @@ public class PetrinetzPackageImpl extends EPackageImpl implements PetrinetzPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getStelle_Name() {
-		return (EAttribute) stelleEClass.getEStructuralFeatures().get(2);
+	public EReference getStelle_Zu() {
+		return (EReference) stelleEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -148,7 +192,7 @@ public class PetrinetzPackageImpl extends EPackageImpl implements PetrinetzPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTransition_B() {
+	public EReference getTransition_Zu() {
 		return (EReference) transitionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -157,7 +201,7 @@ public class PetrinetzPackageImpl extends EPackageImpl implements PetrinetzPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTransition_Gewicht() {
+	public EAttribute getTransition_Name() {
 		return (EAttribute) transitionEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -166,7 +210,7 @@ public class PetrinetzPackageImpl extends EPackageImpl implements PetrinetzPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTransition_Name() {
+	public EAttribute getTransition_Value() {
 		return (EAttribute) transitionEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -199,15 +243,20 @@ public class PetrinetzPackageImpl extends EPackageImpl implements PetrinetzPacka
 		isCreated = true;
 
 		// Create classes and their features
+		petrinetzEClass = createEClass(PETRINETZ);
+		createEAttribute(petrinetzEClass, PETRINETZ__NAME);
+		createEReference(petrinetzEClass, PETRINETZ__S);
+		createEReference(petrinetzEClass, PETRINETZ__T);
+
 		stelleEClass = createEClass(STELLE);
-		createEAttribute(stelleEClass, STELLE__MARK);
-		createEReference(stelleEClass, STELLE__A);
 		createEAttribute(stelleEClass, STELLE__NAME);
+		createEAttribute(stelleEClass, STELLE__TOKEN);
+		createEReference(stelleEClass, STELLE__ZU);
 
 		transitionEClass = createEClass(TRANSITION);
-		createEReference(transitionEClass, TRANSITION__B);
-		createEAttribute(transitionEClass, TRANSITION__GEWICHT);
+		createEReference(transitionEClass, TRANSITION__ZU);
 		createEAttribute(transitionEClass, TRANSITION__NAME);
+		createEAttribute(transitionEClass, TRANSITION__VALUE);
 	}
 
 	/**
@@ -241,23 +290,35 @@ public class PetrinetzPackageImpl extends EPackageImpl implements PetrinetzPacka
 		// Add supertypes to classes
 
 		// Initialize classes, features, and operations; add parameters
+		initEClass(petrinetzEClass, Petrinetz.class, "Petrinetz", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPetrinetz_Name(), ecorePackage.getEString(), "name", "Mein Petrinetz", 0, 1, Petrinetz.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPetrinetz_S(), this.getStelle(), null, "s", null, 0, -1, Petrinetz.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getPetrinetz_T(), this.getTransition(), null, "t", null, 0, -1, Petrinetz.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
 		initEClass(stelleEClass, Stelle.class, "Stelle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getStelle_Mark(), ecorePackage.getEBoolean(), "Mark", null, 0, 1, Stelle.class, !IS_TRANSIENT,
+		initEAttribute(getStelle_Name(), ecorePackage.getEString(), "name", "Eine Stelle", 0, 1, Stelle.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStelle_Token(), ecorePackage.getEBoolean(), "token", null, 0, 1, Stelle.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStelle_A(), this.getTransition(), null, "A", null, 0, -1, Stelle.class, !IS_TRANSIENT,
+		initEReference(getStelle_Zu(), this.getTransition(), null, "zu", null, 0, -1, Stelle.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEAttribute(getStelle_Name(), ecorePackage.getEString(), "Name", null, 1, 1, Stelle.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(transitionEClass, Transition.class, "Transition", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTransition_B(), this.getStelle(), null, "B", null, 1, 1, Transition.class, !IS_TRANSIENT,
+		initEReference(getTransition_Zu(), this.getStelle(), null, "zu", null, 1, -1, Transition.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEAttribute(getTransition_Gewicht(), ecorePackage.getEInt(), "Gewicht", null, 0, 1, Transition.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTransition_Name(), ecorePackage.getEString(), "Name", null, 1, 1, Transition.class,
+		initEAttribute(getTransition_Name(), ecorePackage.getEString(), "name", "Eine Transition", 0, 1,
+				Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTransition_Value(), ecorePackage.getEInt(), "value", "0", 0, 1, Transition.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource

@@ -67,6 +67,11 @@ public class PetrinetzAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected PetrinetzSwitch<Adapter> modelSwitch = new PetrinetzSwitch<Adapter>() {
 		@Override
+		public Adapter casePetrinetz(Petrinetz object) {
+			return createPetrinetzAdapter();
+		}
+
+		@Override
 		public Adapter caseStelle(Stelle object) {
 			return createStelleAdapter();
 		}
@@ -93,6 +98,20 @@ public class PetrinetzAdapterFactory extends AdapterFactoryImpl {
 	@Override
 	public Adapter createAdapter(Notifier target) {
 		return modelSwitch.doSwitch((EObject) target);
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link petrinetz.Petrinetz <em>Petrinetz</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see petrinetz.Petrinetz
+	 * @generated
+	 */
+	public Adapter createPetrinetzAdapter() {
+		return null;
 	}
 
 	/**

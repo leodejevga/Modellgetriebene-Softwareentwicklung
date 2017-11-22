@@ -9,7 +9,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -20,7 +19,6 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import petrinetz.PetrinetzPackage;
 import petrinetz.Stelle;
 
@@ -53,40 +51,11 @@ public class StelleItemProvider extends ItemProviderAdapter implements IEditingD
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addMarkPropertyDescriptor(object);
-			addAPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
+			addTokenPropertyDescriptor(object);
+			addZuPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Mark feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addMarkPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Stelle_Mark_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Stelle_Mark_feature", "_UI_Stelle_type"),
-						PetrinetzPackage.Literals.STELLE__MARK, true, false, false,
-						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the A feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Stelle_A_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Stelle_A_feature", "_UI_Stelle_type"),
-						PetrinetzPackage.Literals.STELLE__A, true, false, true, null, null, null));
 	}
 
 	/**
@@ -98,10 +67,39 @@ public class StelleItemProvider extends ItemProviderAdapter implements IEditingD
 	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Stelle_Name_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Stelle_Name_feature", "_UI_Stelle_type"),
+						getResourceLocator(), getString("_UI_Stelle_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Stelle_name_feature", "_UI_Stelle_type"),
 						PetrinetzPackage.Literals.STELLE__NAME, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Token feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTokenPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Stelle_token_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Stelle_token_feature", "_UI_Stelle_type"),
+						PetrinetzPackage.Literals.STELLE__TOKEN, true, false, false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Zu feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addZuPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Stelle_zu_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Stelle_zu_feature", "_UI_Stelle_type"),
+						PetrinetzPackage.Literals.STELLE__ZU, true, false, true, null, null, null));
 	}
 
 	/**
@@ -150,8 +148,8 @@ public class StelleItemProvider extends ItemProviderAdapter implements IEditingD
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Stelle.class)) {
-		case PetrinetzPackage.STELLE__MARK:
 		case PetrinetzPackage.STELLE__NAME:
+		case PetrinetzPackage.STELLE__TOKEN:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
