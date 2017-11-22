@@ -85,7 +85,7 @@ public class StelleItemProvider extends ItemProviderAdapter implements IEditingD
 						getResourceLocator(), getString("_UI_Stelle_token_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_Stelle_token_feature", "_UI_Stelle_type"),
 						PetrinetzPackage.Literals.STELLE__TOKEN, true, false, false,
-						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
 	/**

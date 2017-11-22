@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link petrinetz.Stelle#getName <em>Name</em>}</li>
- *   <li>{@link petrinetz.Stelle#isToken <em>Token</em>}</li>
+ *   <li>{@link petrinetz.Stelle#getToken <em>Token</em>}</li>
  *   <li>{@link petrinetz.Stelle#getZu <em>Zu</em>}</li>
  * </ul>
  *
@@ -61,22 +61,22 @@ public interface Stelle extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Token</em>' attribute.
-	 * @see #setToken(boolean)
+	 * @see #setToken(int)
 	 * @see petrinetz.PetrinetzPackage#getStelle_Token()
 	 * @model
 	 * @generated
 	 */
-	boolean isToken();
+	int getToken();
 
 	/**
-	 * Sets the value of the '{@link petrinetz.Stelle#isToken <em>Token</em>}' attribute.
+	 * Sets the value of the '{@link petrinetz.Stelle#getToken <em>Token</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Token</em>' attribute.
-	 * @see #isToken()
+	 * @see #getToken()
 	 * @generated
 	 */
-	void setToken(boolean value);
+	void setToken(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Zu</b></em>' reference list.

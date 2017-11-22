@@ -195,13 +195,22 @@ public interface PetrinetzPackage extends EPackage {
 	int TRANSITION__NAME = 1;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * The feature id for the '<em><b>In</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__VALUE = 2;
+	int TRANSITION__IN = 2;
+
+	/**
+	 * The feature id for the '<em><b>Out</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__OUT = 3;
 
 	/**
 	 * The number of structural features of the '<em>Transition</em>' class.
@@ -210,7 +219,7 @@ public interface PetrinetzPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_FEATURE_COUNT = 3;
+	int TRANSITION_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Transition</em>' class.
@@ -286,11 +295,11 @@ public interface PetrinetzPackage extends EPackage {
 	EAttribute getStelle_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link petrinetz.Stelle#isToken <em>Token</em>}'.
+	 * Returns the meta object for the attribute '{@link petrinetz.Stelle#getToken <em>Token</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Token</em>'.
-	 * @see petrinetz.Stelle#isToken()
+	 * @see petrinetz.Stelle#getToken()
 	 * @see #getStelle()
 	 * @generated
 	 */
@@ -340,15 +349,26 @@ public interface PetrinetzPackage extends EPackage {
 	EAttribute getTransition_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link petrinetz.Transition#getValue <em>Value</em>}'.
+	 * Returns the meta object for the attribute '{@link petrinetz.Transition#getIn <em>In</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see petrinetz.Transition#getValue()
+	 * @return the meta object for the attribute '<em>In</em>'.
+	 * @see petrinetz.Transition#getIn()
 	 * @see #getTransition()
 	 * @generated
 	 */
-	EAttribute getTransition_Value();
+	EAttribute getTransition_In();
+
+	/**
+	 * Returns the meta object for the attribute '{@link petrinetz.Transition#getOut <em>Out</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Out</em>'.
+	 * @see petrinetz.Transition#getOut()
+	 * @see #getTransition()
+	 * @generated
+	 */
+	EAttribute getTransition_Out();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -468,12 +488,20 @@ public interface PetrinetzPackage extends EPackage {
 		EAttribute TRANSITION__NAME = eINSTANCE.getTransition_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>In</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TRANSITION__VALUE = eINSTANCE.getTransition_Value();
+		EAttribute TRANSITION__IN = eINSTANCE.getTransition_In();
+
+		/**
+		 * The meta object literal for the '<em><b>Out</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRANSITION__OUT = eINSTANCE.getTransition_Out();
 
 	}
 

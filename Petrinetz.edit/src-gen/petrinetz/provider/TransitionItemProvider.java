@@ -55,7 +55,8 @@ public class TransitionItemProvider extends ItemProviderAdapter implements IEdit
 
 			addZuPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
-			addValuePropertyDescriptor(object);
+			addInPropertyDescriptor(object);
+			addOutPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -92,18 +93,34 @@ public class TransitionItemProvider extends ItemProviderAdapter implements IEdit
 	}
 
 	/**
-	 * This adds a property descriptor for the Value feature.
+	 * This adds a property descriptor for the In feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addValuePropertyDescriptor(Object object) {
+	protected void addInPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Transition_value_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Transition_value_feature",
+						getResourceLocator(), getString("_UI_Transition_in_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Transition_in_feature",
 								"_UI_Transition_type"),
-						PetrinetzPackage.Literals.TRANSITION__VALUE, true, false, false,
+						PetrinetzPackage.Literals.TRANSITION__IN, true, false, false,
+						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Out feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOutPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Transition_out_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Transition_out_feature",
+								"_UI_Transition_type"),
+						PetrinetzPackage.Literals.TRANSITION__OUT, true, false, false,
 						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
@@ -154,7 +171,8 @@ public class TransitionItemProvider extends ItemProviderAdapter implements IEdit
 
 		switch (notification.getFeatureID(Transition.class)) {
 		case PetrinetzPackage.TRANSITION__NAME:
-		case PetrinetzPackage.TRANSITION__VALUE:
+		case PetrinetzPackage.TRANSITION__IN:
+		case PetrinetzPackage.TRANSITION__OUT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

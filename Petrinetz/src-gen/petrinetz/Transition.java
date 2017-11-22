@@ -17,7 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link petrinetz.Transition#getZu <em>Zu</em>}</li>
  *   <li>{@link petrinetz.Transition#getName <em>Name</em>}</li>
- *   <li>{@link petrinetz.Transition#getValue <em>Value</em>}</li>
+ *   <li>{@link petrinetz.Transition#getIn <em>In</em>}</li>
+ *   <li>{@link petrinetz.Transition#getOut <em>Out</em>}</li>
  * </ul>
  *
  * @see petrinetz.PetrinetzPackage#getTransition()
@@ -69,30 +70,57 @@ public interface Transition extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Value</b></em>' attribute.
+	 * Returns the value of the '<em><b>In</b></em>' attribute.
 	 * The default value is <code>"0"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Value</em>' attribute isn't clear,
+	 * If the meaning of the '<em>In</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Value</em>' attribute.
-	 * @see #setValue(int)
-	 * @see petrinetz.PetrinetzPackage#getTransition_Value()
+	 * @return the value of the '<em>In</em>' attribute.
+	 * @see #setIn(int)
+	 * @see petrinetz.PetrinetzPackage#getTransition_In()
 	 * @model default="0"
 	 * @generated
 	 */
-	int getValue();
+	int getIn();
 
 	/**
-	 * Sets the value of the '{@link petrinetz.Transition#getValue <em>Value</em>}' attribute.
+	 * Sets the value of the '{@link petrinetz.Transition#getIn <em>In</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value</em>' attribute.
-	 * @see #getValue()
+	 * @param value the new value of the '<em>In</em>' attribute.
+	 * @see #getIn()
 	 * @generated
 	 */
-	void setValue(int value);
+	void setIn(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Out</b></em>' attribute.
+	 * The default value is <code>"0"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Out</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Out</em>' attribute.
+	 * @see #setOut(int)
+	 * @see petrinetz.PetrinetzPackage#getTransition_Out()
+	 * @model default="0"
+	 * @generated
+	 */
+	int getOut();
+
+	/**
+	 * Sets the value of the '{@link petrinetz.Transition#getOut <em>Out</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Out</em>' attribute.
+	 * @see #getOut()
+	 * @generated
+	 */
+	void setOut(int value);
 
 } // Transition

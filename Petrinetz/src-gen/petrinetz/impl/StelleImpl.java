@@ -28,7 +28,7 @@ import petrinetz.Transition;
  * </p>
  * <ul>
  *   <li>{@link petrinetz.impl.StelleImpl#getName <em>Name</em>}</li>
- *   <li>{@link petrinetz.impl.StelleImpl#isToken <em>Token</em>}</li>
+ *   <li>{@link petrinetz.impl.StelleImpl#getToken <em>Token</em>}</li>
  *   <li>{@link petrinetz.impl.StelleImpl#getZu <em>Zu</em>}</li>
  * </ul>
  *
@@ -56,24 +56,24 @@ public class StelleImpl extends MinimalEObjectImpl.Container implements Stelle {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #isToken() <em>Token</em>}' attribute.
+	 * The default value of the '{@link #getToken() <em>Token</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isToken()
+	 * @see #getToken()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean TOKEN_EDEFAULT = false;
+	protected static final int TOKEN_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #isToken() <em>Token</em>}' attribute.
+	 * The cached value of the '{@link #getToken() <em>Token</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isToken()
+	 * @see #getToken()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean token = TOKEN_EDEFAULT;
+	protected int token = TOKEN_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getZu() <em>Zu</em>}' reference list.
@@ -130,7 +130,7 @@ public class StelleImpl extends MinimalEObjectImpl.Container implements Stelle {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isToken() {
+	public int getToken() {
 		return token;
 	}
 
@@ -139,8 +139,8 @@ public class StelleImpl extends MinimalEObjectImpl.Container implements Stelle {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setToken(boolean newToken) {
-		boolean oldToken = token;
+	public void setToken(int newToken) {
+		int oldToken = token;
 		token = newToken;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PetrinetzPackage.STELLE__TOKEN, oldToken, token));
@@ -169,7 +169,7 @@ public class StelleImpl extends MinimalEObjectImpl.Container implements Stelle {
 		case PetrinetzPackage.STELLE__NAME:
 			return getName();
 		case PetrinetzPackage.STELLE__TOKEN:
-			return isToken();
+			return getToken();
 		case PetrinetzPackage.STELLE__ZU:
 			return getZu();
 		}
@@ -189,7 +189,7 @@ public class StelleImpl extends MinimalEObjectImpl.Container implements Stelle {
 			setName((String) newValue);
 			return;
 		case PetrinetzPackage.STELLE__TOKEN:
-			setToken((Boolean) newValue);
+			setToken((Integer) newValue);
 			return;
 		case PetrinetzPackage.STELLE__ZU:
 			getZu().clear();

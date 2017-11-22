@@ -210,8 +210,17 @@ public class PetrinetzPackageImpl extends EPackageImpl implements PetrinetzPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTransition_Value() {
+	public EAttribute getTransition_In() {
 		return (EAttribute) transitionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTransition_Out() {
+		return (EAttribute) transitionEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -256,7 +265,8 @@ public class PetrinetzPackageImpl extends EPackageImpl implements PetrinetzPacka
 		transitionEClass = createEClass(TRANSITION);
 		createEReference(transitionEClass, TRANSITION__ZU);
 		createEAttribute(transitionEClass, TRANSITION__NAME);
-		createEAttribute(transitionEClass, TRANSITION__VALUE);
+		createEAttribute(transitionEClass, TRANSITION__IN);
+		createEAttribute(transitionEClass, TRANSITION__OUT);
 	}
 
 	/**
@@ -304,7 +314,7 @@ public class PetrinetzPackageImpl extends EPackageImpl implements PetrinetzPacka
 		initEClass(stelleEClass, Stelle.class, "Stelle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStelle_Name(), ecorePackage.getEString(), "name", "Eine Stelle", 0, 1, Stelle.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStelle_Token(), ecorePackage.getEBoolean(), "token", null, 0, 1, Stelle.class, !IS_TRANSIENT,
+		initEAttribute(getStelle_Token(), ecorePackage.getEInt(), "token", null, 0, 1, Stelle.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStelle_Zu(), this.getTransition(), null, "zu", null, 0, -1, Stelle.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
@@ -318,8 +328,10 @@ public class PetrinetzPackageImpl extends EPackageImpl implements PetrinetzPacka
 		initEAttribute(getTransition_Name(), ecorePackage.getEString(), "name", "Eine Transition", 0, 1,
 				Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTransition_Value(), ecorePackage.getEInt(), "value", "0", 0, 1, Transition.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTransition_In(), ecorePackage.getEInt(), "in", "0", 0, 1, Transition.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTransition_Out(), ecorePackage.getEInt(), "out", "0", 0, 1, Transition.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
