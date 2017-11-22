@@ -1,7 +1,0 @@
-<testsuite name="Test" time="">
-  <testcase name="test" classname="" time="">
-    <failure>Assertion failed: 				assert active (Aufgaben.N.START) : Line 8
-    	Expected: START, actual: [START, Green, START]
-    </failure>
-  </testcase>
-</testsuite>
