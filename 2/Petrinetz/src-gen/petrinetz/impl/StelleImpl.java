@@ -29,7 +29,7 @@ import petrinetz.Transition;
  * <ul>
  *   <li>{@link petrinetz.impl.StelleImpl#getName <em>Name</em>}</li>
  *   <li>{@link petrinetz.impl.StelleImpl#getToken <em>Token</em>}</li>
- *   <li>{@link petrinetz.impl.StelleImpl#getZu <em>Zu</em>}</li>
+ *   <li>{@link petrinetz.impl.StelleImpl#getVon <em>Von</em>}</li>
  * </ul>
  *
  * @generated
@@ -76,14 +76,14 @@ public class StelleImpl extends MinimalEObjectImpl.Container implements Stelle {
 	protected int token = TOKEN_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getZu() <em>Zu</em>}' reference list.
+	 * The cached value of the '{@link #getVon() <em>Von</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getZu()
+	 * @see #getVon()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Transition> zu;
+	protected EList<Transition> von;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -151,11 +151,11 @@ public class StelleImpl extends MinimalEObjectImpl.Container implements Stelle {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Transition> getZu() {
-		if (zu == null) {
-			zu = new EObjectResolvingEList<Transition>(Transition.class, this, PetrinetzPackage.STELLE__ZU);
+	public EList<Transition> getVon() {
+		if (von == null) {
+			von = new EObjectResolvingEList<Transition>(Transition.class, this, PetrinetzPackage.STELLE__VON);
 		}
-		return zu;
+		return von;
 	}
 
 	/**
@@ -170,8 +170,8 @@ public class StelleImpl extends MinimalEObjectImpl.Container implements Stelle {
 			return getName();
 		case PetrinetzPackage.STELLE__TOKEN:
 			return getToken();
-		case PetrinetzPackage.STELLE__ZU:
-			return getZu();
+		case PetrinetzPackage.STELLE__VON:
+			return getVon();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -191,9 +191,9 @@ public class StelleImpl extends MinimalEObjectImpl.Container implements Stelle {
 		case PetrinetzPackage.STELLE__TOKEN:
 			setToken((Integer) newValue);
 			return;
-		case PetrinetzPackage.STELLE__ZU:
-			getZu().clear();
-			getZu().addAll((Collection<? extends Transition>) newValue);
+		case PetrinetzPackage.STELLE__VON:
+			getVon().clear();
+			getVon().addAll((Collection<? extends Transition>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -213,8 +213,8 @@ public class StelleImpl extends MinimalEObjectImpl.Container implements Stelle {
 		case PetrinetzPackage.STELLE__TOKEN:
 			setToken(TOKEN_EDEFAULT);
 			return;
-		case PetrinetzPackage.STELLE__ZU:
-			getZu().clear();
+		case PetrinetzPackage.STELLE__VON:
+			getVon().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -232,8 +232,8 @@ public class StelleImpl extends MinimalEObjectImpl.Container implements Stelle {
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case PetrinetzPackage.STELLE__TOKEN:
 			return token != TOKEN_EDEFAULT;
-		case PetrinetzPackage.STELLE__ZU:
-			return zu != null && !zu.isEmpty();
+		case PetrinetzPackage.STELLE__VON:
+			return von != null && !von.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

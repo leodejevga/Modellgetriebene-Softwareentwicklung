@@ -174,7 +174,7 @@ public class PetrinetzPackageImpl extends EPackageImpl implements PetrinetzPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStelle_Zu() {
+	public EReference getStelle_Von() {
 		return (EReference) stelleEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -260,7 +260,7 @@ public class PetrinetzPackageImpl extends EPackageImpl implements PetrinetzPacka
 		stelleEClass = createEClass(STELLE);
 		createEAttribute(stelleEClass, STELLE__NAME);
 		createEAttribute(stelleEClass, STELLE__TOKEN);
-		createEReference(stelleEClass, STELLE__ZU);
+		createEReference(stelleEClass, STELLE__VON);
 
 		transitionEClass = createEClass(TRANSITION);
 		createEReference(transitionEClass, TRANSITION__ZU);
@@ -316,7 +316,7 @@ public class PetrinetzPackageImpl extends EPackageImpl implements PetrinetzPacka
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStelle_Token(), ecorePackage.getEInt(), "token", null, 0, 1, Stelle.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStelle_Zu(), this.getTransition(), null, "zu", null, 0, -1, Stelle.class, !IS_TRANSIENT,
+		initEReference(getStelle_Von(), this.getTransition(), null, "von", null, 0, -1, Stelle.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 

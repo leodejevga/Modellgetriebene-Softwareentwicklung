@@ -140,13 +140,13 @@ public interface PetrinetzPackage extends EPackage {
 	int STELLE__TOKEN = 1;
 
 	/**
-	 * The feature id for the '<em><b>Zu</b></em>' reference list.
+	 * The feature id for the '<em><b>Von</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STELLE__ZU = 2;
+	int STELLE__VON = 2;
 
 	/**
 	 * The number of structural features of the '<em>Stelle</em>' class.
@@ -306,15 +306,15 @@ public interface PetrinetzPackage extends EPackage {
 	EAttribute getStelle_Token();
 
 	/**
-	 * Returns the meta object for the reference list '{@link petrinetz.Stelle#getZu <em>Zu</em>}'.
+	 * Returns the meta object for the reference list '{@link petrinetz.Stelle#getVon <em>Von</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Zu</em>'.
-	 * @see petrinetz.Stelle#getZu()
+	 * @return the meta object for the reference list '<em>Von</em>'.
+	 * @see petrinetz.Stelle#getVon()
 	 * @see #getStelle()
 	 * @generated
 	 */
-	EReference getStelle_Zu();
+	EReference getStelle_Von();
 
 	/**
 	 * Returns the meta object for class '{@link petrinetz.Transition <em>Transition</em>}'.
@@ -454,12 +454,12 @@ public interface PetrinetzPackage extends EPackage {
 		EAttribute STELLE__TOKEN = eINSTANCE.getStelle_Token();
 
 		/**
-		 * The meta object literal for the '<em><b>Zu</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Von</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STELLE__ZU = eINSTANCE.getStelle_Zu();
+		EReference STELLE__VON = eINSTANCE.getStelle_Von();
 
 		/**
 		 * The meta object literal for the '{@link petrinetz.impl.TransitionImpl <em>Transition</em>}' class.

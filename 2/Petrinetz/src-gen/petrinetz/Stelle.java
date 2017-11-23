@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link petrinetz.Stelle#getName <em>Name</em>}</li>
  *   <li>{@link petrinetz.Stelle#getToken <em>Token</em>}</li>
- *   <li>{@link petrinetz.Stelle#getZu <em>Zu</em>}</li>
+ *   <li>{@link petrinetz.Stelle#getVon <em>Von</em>}</li>
  * </ul>
  *
  * @see petrinetz.PetrinetzPackage#getStelle()
@@ -79,19 +79,19 @@ public interface Stelle extends EObject {
 	void setToken(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Zu</b></em>' reference list.
+	 * Returns the value of the '<em><b>Von</b></em>' reference list.
 	 * The list contents are of type {@link petrinetz.Transition}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Zu</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Von</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Zu</em>' reference list.
-	 * @see petrinetz.PetrinetzPackage#getStelle_Zu()
+	 * @return the value of the '<em>Von</em>' reference list.
+	 * @see petrinetz.PetrinetzPackage#getStelle_Von()
 	 * @model
 	 * @generated
 	 */
-	EList<Transition> getZu();
+	EList<Transition> getVon();
 
 } // Stelle

@@ -17,7 +17,7 @@
     <genClasses ecoreClass="petrinetz.ecore#//Stelle">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute petrinetz.ecore#//Stelle/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute petrinetz.ecore#//Stelle/token"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference petrinetz.ecore#//Stelle/zu"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference petrinetz.ecore#//Stelle/von"/>
     </genClasses>
     <genClasses ecoreClass="petrinetz.ecore#//Transition">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference petrinetz.ecore#//Transition/zu"/>

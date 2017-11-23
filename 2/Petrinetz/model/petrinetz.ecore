@@ -13,7 +13,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral="Eine Stelle"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="token" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="zu" upperBound="-1" eType="#//Transition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="von" upperBound="-1" eType="#//Transition"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Transition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="zu" lowerBound="1" upperBound="-1"

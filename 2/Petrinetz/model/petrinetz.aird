@@ -272,9 +272,9 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_JJXSUM_dEeepLd1tu3JYvw" name="[0..*] zu" sourceNode="_SdWqYM_WEeepLd1tu3JYvw" targetNode="_SdYfkM_WEeepLd1tu3JYvw">
-      <target xmi:type="ecore:EReference" href="petrinetz.ecore#//Stelle/zu"/>
-      <semanticElements xmi:type="ecore:EReference" href="petrinetz.ecore#//Stelle/zu"/>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_JJXSUM_dEeepLd1tu3JYvw" name="[0..*] von" sourceNode="_SdWqYM_WEeepLd1tu3JYvw" targetNode="_SdYfkM_WEeepLd1tu3JYvw">
+      <target xmi:type="ecore:EReference" href="petrinetz.ecore#//Stelle/von"/>
+      <semanticElements xmi:type="ecore:EReference" href="petrinetz.ecore#//Stelle/von"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_JJXSUc_dEeepLd1tu3JYvw" routingStyle="manhattan" strokeColor="0,0,0">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_JJXSUs_dEeepLd1tu3JYvw" showIcon="false">

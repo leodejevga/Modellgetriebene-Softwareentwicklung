@@ -53,7 +53,7 @@ public class StelleItemProvider extends ItemProviderAdapter implements IEditingD
 
 			addNamePropertyDescriptor(object);
 			addTokenPropertyDescriptor(object);
-			addZuPropertyDescriptor(object);
+			addVonPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -89,17 +89,17 @@ public class StelleItemProvider extends ItemProviderAdapter implements IEditingD
 	}
 
 	/**
-	 * This adds a property descriptor for the Zu feature.
+	 * This adds a property descriptor for the Von feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addZuPropertyDescriptor(Object object) {
+	protected void addVonPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Stelle_zu_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Stelle_zu_feature", "_UI_Stelle_type"),
-						PetrinetzPackage.Literals.STELLE__ZU, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_Stelle_von_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Stelle_von_feature", "_UI_Stelle_type"),
+						PetrinetzPackage.Literals.STELLE__VON, true, false, true, null, null, null));
 	}
 
 	/**
