@@ -1,0 +1,57 @@
+grammar org.xtext.example.mydsl.PetriNetz with org.eclipse.xtext.common.Terminals
+
+generate petriNetz "http://www.xtext.org/example/mydsl/PetriNetz"
+
+Petrinet:
+	'petrinet' name=ID '{'
+	places+=Place*
+	transitions+=Transition*
+	arcs+=Arc*
+	'}';
+
+Place:
+	'place' name=ID ':'
+	(tokens+=Token (',' tokens+=Token)*)? '{'
+	('out' ':'
+	out+=PTArc (',' out+=PTArc)*)?
+	('in' ':'
+	in+=TPArc (',' in+=TPArc)*)?
+	'}';
+
+Token:
+	{Token}
+	'token';
+
+Transition:
+	'transition' name=ID ':' '{'
+	('in' ':'
+	in+=PTArc (',' in+=PTArc)*)?
+	('out' ':'
+	out+=TPArc (',' out+=TPArc)*)?
+	'}';
+
+Arc:
+	(PTArc | TPArc)
+	'arc' weight=INT;
+
+PTArc:
+	'{'
+	src=[Place] '>'
+	trg=[Transition]
+	'}';
+
+TPArc:
+	'{'
+	trg=[Place] '<'
+	src=[Transition]
+	'}';
+
+
+
+
+
+
+
+
+
+

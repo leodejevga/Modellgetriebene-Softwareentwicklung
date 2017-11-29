@@ -1,0 +1,35 @@
+petrinet Ampel {
+	place Red : token {
+		out : { Red > YtoR }
+		in : { Red < RtoYR }
+	}
+	place YellowRed : {
+		out : { YellowRed > YRtoG }
+		in : { YellowRed < RtoYR }
+	}
+	place Green : {
+		out : { Green > GtoY }
+		in : { Green < YRtoG }
+	}
+	place Yellow : {
+		out : { Yellow > YtoR }
+		in : { Yellow < GtoY }
+	}
+	
+	transition RtoYR : {
+		in :  { Red > RtoYR }
+		out : { YellowRed < RtoYR }
+	}
+	transition YRtoG : {
+		in : { YellowRed > YRtoG }
+		out : { YellowRed < YRtoG }
+	}
+	transition GtoY : {
+		in : { Green > GtoY }
+		out : { Yellow < GtoY }
+	}
+	transition YtoR : {
+		in : { Yellow > YtoR }
+		out : { Red < YtoR }
+	}
+}
