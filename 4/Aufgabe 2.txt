@@ -1,0 +1,15 @@
+context InvokeProcessinv :
+self.arguments −> size() = self.subProcess.variables−>select(v : wcore::Variable | v.scope.oclAsType(wcore::Scope)=wcore::Scope::GLOBAL) −> size() and
+Sequence{l..self.arguments −> size()} −> forAll(i:Integer | let var1 : wcore::Variable = self.arguments −> at(i), var2 : wcore::Variable = self.subProcess.variables −>
+select(v : wcore::Variable | v.scope.oclAsType(wcore::Scope) = wcore::Scope::GLOBAL) −> at(i)in var1.oclAsType(wcore::Variable).eType = var2.oclAsType(wcore::Variable).eType)
+
+
+Also
+InvokeProcessinv kann dann stattfinden wenn:
+ - dieser genausoviele argumente hat wie der subProcess globale variablen besitzt
+ - denn wenn es so ist, muss auch gelten, dass jedes Argument an der Stelle i des InvokeProcessinv das den gleichen eType wie die globale Variable des Subprozesses an der Stelle i hat.
+
+also prüft es ob die argumente den gleichen typ haben wie die globalen variablen im subProcess
+
+
+wir haben 1 d) nicht hingekriegt... theoretisch müsste man da eine Tiefensuche starten....

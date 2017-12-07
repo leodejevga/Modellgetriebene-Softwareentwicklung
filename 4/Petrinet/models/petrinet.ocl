@@ -1,0 +1,11 @@
+import petri : 'ueb04_petrinet.ecore' -- Name der Ecore-Datei. Diese muss sich im selben Verzeichnis befinden.
+
+package petrinet -- Name des packages des Meta-Modells (legt den Scope der folgenden Constraints fest)
+
+context Petrinet
+
+inv AtLeastOnePlace: self.places->size() >= CalculateNothingButASimpleOne()  
+
+def: CalculateNothingButASimpleOne() : Integer = 1
+
+endpackage -- Beendet den package-Scope
