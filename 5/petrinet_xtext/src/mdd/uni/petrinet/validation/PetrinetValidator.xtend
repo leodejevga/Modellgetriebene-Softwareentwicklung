@@ -20,16 +20,14 @@ import java.util.List
  */
 class PetrinetValidator extends AbstractPetrinetValidator {
 
-	public static val INVALID_NAME = 'invalidName'
+	public static val INCOMPLETE_TRANSITION = 'incompleteTransition'
 	public static val DUPLICATE_EDGE = 'duplicateEdge'
-	public static val EMPTY_ENTITY = 'emptyEntity'
-	public static val NONUNIQUE_NAMES = 'nonuniqueNames'
 
 	@Check
 	def checkIncompleteTransition(Petrinet petri) {
-		if ((petri.eContainer as Transition).in == 0 || (petri.eContainer as Transition).out == 0) {
-			warning('Transition has no ingoing and outgoing connection to an Arc',
-				PetrinetPackage.Literals.TRANSITION__IN, INVALID_NAME)
+		if ((petri.eContainer as Transition).in.size == 0 || (petri.eContainer as Transition).out.size == 0) {
+			warning('Transition has no ingoing or outgoing Arcs',
+				PetrinetPackage.Literals.TRANSITION__IN, INCOMPLETE_TRANSITION)
 		}
 	}
 

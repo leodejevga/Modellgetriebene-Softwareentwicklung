@@ -26,4 +26,5 @@ Export-Package: mdd.uni.petrinet.parser.antlr.internal,
  mdd.uni.petrinet.serializer,
  mdd.uni.petrinet.petrinet,
  mdd.uni.petrinet.scoping
-Import-Package: org.apache.log4j
+Import-Package: org.apache.log4j,
+ org.eclipse.ui.internal

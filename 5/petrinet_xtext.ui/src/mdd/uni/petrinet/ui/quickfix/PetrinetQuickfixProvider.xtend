@@ -20,6 +20,14 @@ class PetrinetQuickfixProvider extends DefaultQuickfixProvider {
 	def fixDoubleEdges(Issue issue, IssueResolutionAcceptor acceptor){
 		acceptor.accept(issue, "Remove doubles", "Remove the double Edge", "")[
 			context |
+			//Kante Löschen
+		]
+	}
+	@Fix(PetrinetValidator.INCOMPLETE_TRANSITION)
+	def fixIncompleteTransition(Issue issue, IssueResolutionAcceptor acceptor){
+		acceptor.accept(issue, "Add connection", "Add connection to a random Place", "")[
+			context |
+			//Arc zu einem Place hinzuffügen
 		]
 	}
 
