@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<?eclipse version="3.0"?>
+<plugin>
+	<extension point="org.eclipse.emf.ecore.generated_package">
+		<package 
+			uri = "http://www.uni.mdd/petrinet/Petrinet"
+			class = "mdd.uni.petrinet.petrinet.PetrinetPackage"
+			genModel = "model/generated/Petrinet.genmodel" />
+	</extension>
+</plugin>
