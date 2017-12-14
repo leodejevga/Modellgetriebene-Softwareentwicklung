@@ -24,8 +24,8 @@ class PetrinetValidator extends AbstractPetrinetValidator {
 	public static val DUPLICATE_EDGE = 'duplicateEdge'
 
 	@Check
-	def checkIncompleteTransition(Petrinet petri) {
-		if ((petri.eContainer as Transition).in.size == 0 || (petri.eContainer as Transition).out.size == 0) {
+	def checkIncompleteTransition(Transition t) {
+		if (t.in.size == 0 || t.out.size == 0) {
 			warning('Transition has no ingoing or outgoing Arcs',
 				PetrinetPackage.Literals.TRANSITION__IN, INCOMPLETE_TRANSITION)
 		}
