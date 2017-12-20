@@ -47,10 +47,10 @@ class PetrinetValidator extends AbstractPetrinetValidator {
 						in.add(arc.source);
 				} else if (a instanceof TPArc) {
 					var arc = a as TPArc;
-					if (in.contains(arc.target)) {
+					if (out.contains(arc.target)) {
 						duplicateOUT = arc.target;
 					} else
-						in.add(arc.target);
+						out.add(arc.target);
 				}
 		}
 		if (duplicateIN !== null) {
