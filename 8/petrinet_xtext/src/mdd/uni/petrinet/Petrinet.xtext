@@ -1,0 +1,51 @@
+grammar mdd.uni.petrinet.Petrinet with org.eclipse.xtext.common.Terminals
+
+generate petrinet "http://www.uni.mdd/petrinet/Petrinet"
+
+Petrinet:
+	'petrinet' name=ID 
+	'{'(
+		('places' '{' (places+=Place)* '}')
+		('transitions' '{' (transitions+=Transition)* '}')
+		('arcs' '{' (arcs+=Arc)* '}')
+	)'}'
+;
+
+Place:
+	'place' name=ID
+	'{'(
+		('tokens' '{' (tokens+=Token)* '}')
+		('out' '{' (out+=[PTArc])* '}')
+		('in' '{'  (in+=[TPArc])* '}')
+	)'}'
+;
+
+Token:
+	{Token} 'token'
+;
+
+Transition:
+	'transition' name=ID
+	'{'(
+		('out' '{' (out+=[TPArc])* '}')
+		('in' '{' (in+=[PTArc])* '}')
+	)'}'
+;
+
+Arc:
+	(PTArc| TPArc)
+;
+
+PTArc:
+	'ptarc' name=ID
+	'weight' weight=INT
+	'place' source=[Place]
+	'transition' target=[Transition]
+;
+
+TPArc:
+	'tparc' name=ID
+	'weight' weight=INT
+	'transition' source=[Transition]
+	'place' target=[Place]
+;

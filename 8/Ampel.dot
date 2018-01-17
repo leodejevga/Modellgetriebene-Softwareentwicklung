@@ -1,0 +1,12 @@
+digraph Ampel {
+	PLACE_A [style="rounded, filled", fillcolor=aliceblue, label = "A | 2"]
+	PLACE_B [style="rounded, filled", fillcolor=aliceblue, label = "B | 1"]
+	PLACE_C [style="rounded, filled", fillcolor=aliceblue, label = "C | 1"]
+	PLACE_ICH_BIN_EIN_PLACE [style="rounded, filled", fillcolor=aliceblue, label = "ICH_BIN_EIN_PLACE | 4"]
+	TRANSITION_AB [style="rounded, filled", shape=diamond, fillcolor=green, label = AB]
+
+	PLACE_A -> TRANSITION_AB [label=1]
+	PLACE_C -> TRANSITION_AB [label=3]
+	TRANSITION_AB -> PLACE_B [label=2]
+	TRANSITION_AB -> PLACE_ICH_BIN_EIN_PLACE [label=4]
+}

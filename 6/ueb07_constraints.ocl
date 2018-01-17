@@ -1,0 +1,36 @@
+import sgraph : '../../../org.yakindu.sct.model.sgraph/model/emf/sgraph.ecore#/'
+import stext : '../../../org.yakindu.sct.model.stext/model/SText.ecore#/'
+import base : '../../../org.yakindu.base.types/model/base.ecore#/'
+import expressions : '../../../org.yakindu.base.expressions/model/Expressions.ecore#/'
+import types : '../../../org.yakindu.base.types/model/types.ecore#/'
+
+package sgraph
+
+context Statechart
+inv UniqueInterfaceNames: self.scopes->select(s | s.oclIsTypeOf(stext::InterfaceScope))->collect(is | is.oclAsType(stext::InterfaceScope))->forAll(is1, is2 | is1.name = is2.name implies is1 = is2)
+
+inv EventsAreUsedInTransitions: self.scopes -> select(oclIsTypeOf(stext::InterfaceScope)) -> collect(events) -> forAll(e | self.checkEventUsedInTransitions(e))
+
+context CompositeElement 
+def: checkEventUsedInTransitions(e : types::Event) : Boolean =
+	self.regions -> exists(r | r.vertices -> exists(v | v.outgoingTransitions -> exists(t | t.trigger.oclIsTypeOf(stext::ReactionTrigger) 
+			and t.trigger.oclAsType(stext::ReactionTrigger).triggers -> exists(es | es.oclIsTypeOf(stext::RegularEventSpec) and es.oclAsType(stext::RegularEventSpec).checkEventUsed(e)))))
+
+/* An dieser Stelle müsste die Prüfung noch erweitert werden um auch die Nutzung der Events in den States selbst zu erfassen. 
+ * Für eine Weihnachtsaufgabe erscheint mir das allerdings etwas zu viel.
+ */
+
+endpackage
+
+package stext
+
+context stext::RegularEventSpec
+def: checkEventUsed(e: types::Event) : Boolean =
+	if (self.event.oclIsTypeOf(expressions::PrimitiveValueExpression)) 
+		then 
+			let pe = self.event.oclAsType(expressions::PrimitiveValueExpression)
+			in pe.value.oclIsTypeOf(expressions::StringLiteral) and pe.value.oclAsType(expressions::StringLiteral).value = e.name
+		else
+			false
+	endif
+endpackage

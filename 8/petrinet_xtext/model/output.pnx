@@ -1,0 +1,33 @@
+petrinet ABS {
+	places {
+		place P1 {
+			tokens{   }
+			out { A }
+			in {}
+		}
+		
+		place P2 {
+			tokens{ token  }
+			out { B }
+			in {}
+		}
+		
+		place P3 {
+			tokens{ token token token } out { } in { X }
+		}
+	}
+	transitions {
+		transition T1 {
+			out { X } in { A B } }
+		transition T2 {
+			out { X } in { C } }
+		transition T3 {
+			out { X } in { A } }
+	 } 	 
+	 arcs { 
+	 	ptarc A weight 2 place P1 transition T1 
+	 	ptarc B weight 1 place P2 transition T1
+	 	ptarc C weight 3 place P2 transition T2  		 	
+		tparc X weight 3 transition T1 place P3 
+	} 
+}
